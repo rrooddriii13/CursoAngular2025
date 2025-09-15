@@ -1,0 +1,26 @@
+<h1>{{ nombre() }}</h1>
+
+<dl>
+  <td>Nombre: {{ nombre() }}  </td> 
+  <dd></dd>
+  <td>Edad:   {{ edad() }}</td>
+  <dd></dd>
+  <br>
+  <td>Método:</td>
+  <dd>{{ DescripcionHeroe() }}</dd>
+
+  <td>Capitalizado en mayuscula :</td>
+
+  <!-- <dd>{{ nombre().toUpperCase() }}</dd> -->
+  <dd>{{ nombre() | uppercase }}</dd>
+</dl>
+
+<button (click)="cambiarHeroe()" class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<button (click)="cambiarEdad()" class="btn btn-primary">Cambiar edad</button>
+
+<button (click)="resetear()" class="btn btn-primary mx-2">Reset</button>
+
+<a routerLink="/">Volver al contador</a>
