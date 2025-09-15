@@ -1,1 +1,42 @@
-<p>dragonball works!</p>
+<h1>DragonBall Page</h1>
+<hr />
+
+<section class="row">
+	<div class="col-12 col-sm-6">
+		<h3>Agregar: {{ nombre() }}</h3>
+		
+		<!-- 
+		change permite q al cambiar el valor se actualice
+		input permite q al escribir se actualice
+		#txtnombre crea una referencia local al input haces referencia al txtnombre	y esta ref al input 
+		#txtpoder crea una referencia local al input -->
+		<input type="text" class="form-control" placeholder="Nombre" [value]="nombre()"
+			(change)="nombre.set(txtnombre.value)" (input)="nombre.set(txtnombre.value)" #txtnombre />
+
+		<input type="number" class="form-control mt-2" placeholder="Poder" [value]="poder()"
+			(input)="poder.set(+txtpoder.value)" #txtpoder />
+
+		<button (click)="anadirPersonaje()" class="mt-2 btn btn-primary">Agregar</button>
+	</div>
+
+	<div class="col-12 col-sm-6">
+		<h3>Listado de personajes</h3>
+		<ul>
+			@for (personaje of personajes(); track personaje.id; let idx = $index) {
+				<!-- si poder + 500 q pase eso   -->
+				@if( personaje.poder > 500 ) {
+				<li>
+					<span>{{ idx + 1 }} - {{ personaje.nombre }}</span>
+					<!-- si es +9000 salgga rojo -9000 azul -->
+					<strong [class.text-danger]="personaje.poder > 9000" [class.text-primary]="personaje.poder < 9000">
+						<!-- [ngClass]="poderClasses()" -->
+						({{ personaje.poder }})</strong>
+				</li>
+				} @else {
+					<!-- hay uno q tiene 500 y sale eso   -->
+					<li><strong>Aquí no hay nadie</strong></li>
+				} 
+			}
+		</ul>
+	</div>
+</section>

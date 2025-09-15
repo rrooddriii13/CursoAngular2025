@@ -1,0 +1,23 @@
+
+<h3>Agregar: {{ nombre() }}</h3>
+
+<input
+  type="text"
+  class="form-control"
+  placeholder="Nombre"
+  [value]="nombre()"
+  (change)="nombre.set(txtnombre.value)"
+  (input)="nombre.set(txtnombre.value)"
+  #txtnombre
+/>
+
+<input
+  type="number"
+  class="form-control mt-2"
+  placeholder="Poder"
+  [value]="poder()"
+  (input)="poder.set(+txtpoder.value)"
+  #txtpoder
+/>
+
+<button (click)="anadirPersonaje()" class="mt-2 btn btn-primary">Agregar</button>
