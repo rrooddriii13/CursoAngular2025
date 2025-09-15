@@ -1,0 +1,21 @@
+
+<nav>
+<!-- 
+    routerLink: define la ruta a la que navega el enlace.
+    routerLinkActive: clase CSS que se aplica cuando la ruta está activa.
+    [routerLinkActiveOptions]: opciones para routerLinkActive, por ejemplo 
+    exact: true para que solo se active si la ruta es exactamente igual.
+  -->  
+    <a
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Contador</a>
+
+  <a [routerLink]="['/heroe']" [routerLinkActive]="'active'">Heroe</a>
+
+  <a [routerLink]="['/dragonball']" [routerLinkActive]="'active'">Dragonball</a>
+
+  <a routerLink="/dragonball-super" routerLinkActive="active">Dragonball Super</a>
+
+</nav>
