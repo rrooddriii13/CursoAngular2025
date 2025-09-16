@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { GifService } from 'src/app/services/gifs.service';
 
 interface MenuOption {
   icon: string;
@@ -14,18 +15,19 @@ interface MenuOption {
   templateUrl: './menu-lateral-options.component.html',
 })
 export class MenuLateralOptionsComponent {
+  gifService = inject(GifService);
   menuOptions: MenuOption[] = [
     {
       icon: 'fa-solid fa-chart-line',
       label: 'Trending',
       subLabel: 'Gifs Populares',
-      route: '/panel/trending',
+      route: '/panel/tendencias',
     },
     {
       icon: 'fa-solid fa-magnifying-glass',
       label: 'Buscador',
       subLabel: 'Buscar gifs',
-      route: '/panel/search',
+      route: '/panel/buscar',
     },
   ];
 }

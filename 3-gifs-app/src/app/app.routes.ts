@@ -12,14 +12,19 @@ export const routes: Routes = [
         children: [
         {
             path: 'tendencias', // antes 'trending'
-            component: TendenciaPageComponent
-            // loadComponent: () =>
-            // import('./pages/tendencias-page/tendencias-page.component'),
+            // component: TendenciaPageComponent
+            loadComponent: () =>
+            import('./pages/tendencias-page/tendencias.page.component'),
         },
         {
             path: 'buscar', // antes 'search'
             loadComponent: () =>
             import('./pages/buscar-page/buscar-page.component'),
+        },
+            {
+            path: 'historial/:query',
+            loadComponent: () =>
+            import('./pages/historial/historial.component'),
         },
         // {
         //     path: '**', // cualquier ruta que no coincida

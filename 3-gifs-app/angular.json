@@ -29,7 +29,6 @@
             "styles": [
               "src/styles.css"
             ],
-
             "scripts": []
           },
           "configurations": {
@@ -55,7 +54,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
+                  "with": "src/environments/environment.development.ts"
                 }
               ]
             }
@@ -92,12 +91,16 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "styles.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9be33751-26a7-4c0d-8703-1c4dff2ffb78"
   }
 }

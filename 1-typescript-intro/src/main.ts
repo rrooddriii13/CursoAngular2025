@@ -1,5 +1,4 @@
-import './style.css'
-
+0
 
 //no se ve xq no hago referencia al basic types
 // import './topics/1-basic-types'
