@@ -1,5 +1,5 @@
 <!-- country-search-input -->
-<country-buscar-input placeholder="Buscar por capital"   (value)="query.set($event)"/>
+<country-buscar-input placeholder="Buscar por capital"   (value)="query.set($event)" [initialValue]="query()"/>
 
 <!-- country-list -->
 <pais-lista   
