@@ -1,0 +1,94 @@
+<section class="mx-5">
+  <h1 class="text-2xl font-bold">Pipes Básicos</h1>
+  <h3 class="text-xl font-thin">Pipes incluidos en Angular</h3>
+</section>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Lowercase Pipe - minúsculas</div>
+    <div class="stat-value">{{ nombreMinusculas() | lowercase }}</div>
+    <div class="stat-desc">{{ nombreMinusculas() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Uppercase Pipe de mayúsculas</div>
+    <div class="stat-value">{{ nombreMinusculas () | uppercase }}</div>
+    <div class="stat-desc">{{ nombreMinusculas () }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">TitleCase Pipe de título</div>
+    <div class="stat-value">{{ nombreCompleto() | titlecase }}</div>
+    <div class="stat-desc">{{ nombreCompleto() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date Pipe de fecha</div>
+    <div class="stat-value">{{ customDate() | date }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date|long|GMT-6</div>
+    <div class="stat-value">{{ customDate() | date : "long" : "GMT-6" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date:'yyyy MM'</div>
+    <div class="stat-value">{{ customDate() | date : "yyyy MM" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date|short|GMT-64 -> fecha corta</div>
+    <div class="stat-value">{{ customDate() | date : "short" : "GMT-4" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Date pipe</div>
+    <div class="stat-value">{{ customDate() | date : "dd/MM/yyyy" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-title">Date pipe de hora</div>
+    <div class="stat-value">{{ customDate() | date : "HH:mm:ss" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Date pipe de fecha completa </div>
+    <div class="stat-value">{{ customDate() | date : "EEEE d, MMMM" }}</div>
+    <div class="stat-desc">{{ customDate() }}</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="flex flex-roww gap-2">
+  <h1 class="text-2xl font-bold">
+    Locale Actual:
+    <span class="badge badge-secondary">{{ currentLocale() }}</span>
+  </h1>
+
+  <button (click)="changeLocale('fr')" class="btn btn-primary">
+    Cambiar a francés
+  </button>
+  <button (click)="changeLocale('en')" class="btn btn-primary">
+    Change to English
+  </button>
+  <button (click)="changeLocale('es')" class="btn btn-primary">
+    Cambiar a español
+  </button>
+</div>
