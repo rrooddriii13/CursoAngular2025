@@ -1,0 +1,107 @@
+<h2>Reactivos: Básicos</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <!-- asi lo asocio a myForm y dar guardar  haga funcion -->
+        <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="guardar()">
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label ms-3">Producto</label>
+                <div class="col-sm-6">
+
+                    <input type="text"
+                        class="form-control"
+                        placeholder="Nombre del producto"
+                        formControlName="nombre"
+                        >
+
+                     @if ( formUtils.esCampoValido( myForm, 'nombre') ) {
+                        <span class="form-text text-danger">
+                            {{ formUtils.obtenerErrorCampo( myForm, 'nombre' ) }}
+                        </span>
+                    }
+                </div>
+            </div>
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label ms-3">Precio</label>
+                <div class="col-sm-6">
+                    <input type="number"
+                        class="form-control"
+                        placeholder="Precio del producto"
+                        formControlName="precio"
+                    >
+                     @if ( formUtils.esCampoValido( myForm, 'precio') ) {
+                    <span class="form-text text-danger">
+                        {{ formUtils.obtenerErrorCampo(myForm, "precio") }}
+                        </span>
+                    }
+                </div>
+            </div>
+
+            <!-- Campo de existencias -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label ms-3">Existencias</label>
+                <div class="col-sm-6">
+                    <input type="number"
+                        class="form-control"
+                        placeholder="Existencias del producto"
+                        formControlName="existencias"
+                    >
+
+                    @if ( formUtils.esCampoValido( myForm, 'existencias') ) {
+                        <span class="form-text text-danger">
+                        {{ formUtils.obtenerErrorCampo(myForm, "existencias") }}
+                        </span>
+                    }
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-end"> Guardar</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col">
+
+        <!-- Agrega la clase ms-4 para separar todo el contenido de la izquierda -->
+        <div class="ms-3">
+            <span>Valid = true xq no hay ninguna validacion</span>
+            <pre>{{ myForm.valid | json }}</pre>
+
+            <span>Pristine -> el form no se a tocado desde q lo das al usuario  </span>
+            <pre>{{ myForm.pristine | json }}</pre>
+
+            <span>Touched -> false q el user no lo toco</span>
+            <pre>{{ myForm.touched | json }}</pre>
+
+            <span>Value</span>
+            <pre>{{ myForm.value | json }}</pre>
+
+            <span>Errores en name</span>
+            <pre>{{ myForm.controls["nombre"].errors | json }}</pre>
+            <pre>{{ myForm.controls["precio"].errors | json }}</pre>
+            <pre>{{ myForm.controls["existencias"].errors | json }}</pre>
+
+            <span>Precio</span>
+            <pre>{{ myForm.controls["precio"].value | json }}</pre>
+
+            <span>Producto</span>
+            <pre>{{ myForm.controls["nombre"].value | json }}</pre>
+        </div>
+        
+    </div>
+</div>
