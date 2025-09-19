@@ -14,7 +14,8 @@ export class SwitchesPageComponent {
   formUtils = UtilidadesFormulario;
 
   myForm: FormGroup = this.fb.group({
-    gender: ['M', Validators.required],
+    genero: ['M', Validators.required],
+	//notifications: [false],
     wantNotifications: [true],
     termAndConditions: [false, Validators.requiredTrue],
   });
